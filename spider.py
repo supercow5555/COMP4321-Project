@@ -7,7 +7,6 @@ import collections
 
 from string import punctuation
 
-import scrapy
 from io import StringIO
 from html.parser import HTMLParser
 
@@ -17,11 +16,10 @@ from nltk.corpus import stopwords
 nltk.download('punkt')
 
 from sqlitedict import SqliteDict
-import mysql.connector
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-skiplist = ['https://alum.hkust.edu.hk/home']
+skiplist = []
 
 import time
 
@@ -657,12 +655,12 @@ BFS(input_URL, 300)
 
 ############################################################
 
-save2SqliteDict(url2pageID, 'db/url2pageID.sqlite')
-save2SqliteDict(pageID2Url, 'db/pageID2Url.sqlite')
-save2SqliteDict(pageID2PageMeta, 'db/pageID2PageMeta.sqlite')
-save2SqliteDict(invertedIndex, 'db/invertedIndex.sqlite')
-save2SqliteDict(forwardIndex, 'db/forwardIndex.sqlite')
-save2SqliteDict(parentLink2ChildLink, 'db/parentLink2ChildLink.sqlite')
+save2SqliteDict(url2pageID, 'website/db/url2pageID.sqlite')
+save2SqliteDict(pageID2Url, 'website/db/pageID2Url.sqlite')
+save2SqliteDict(pageID2PageMeta, 'website/db/pageID2PageMeta.sqlite')
+save2SqliteDict(invertedIndex, 'website/db/invertedIndex.sqlite')
+save2SqliteDict(forwardIndex, 'website/db/forwardIndex.sqlite')
+save2SqliteDict(parentLink2ChildLink, 'website/db/parentLink2ChildLink.sqlite')
 
 
 
